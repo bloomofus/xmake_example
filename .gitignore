@@ -1,0 +1,23 @@
+# Build directories
+build/
+
+# Object files
+*.o
+*.obj
+
+# Executables
+rect_selector
+*.exe
+
+# Image cache / temp files
+test_copy.jpg
+
+# Editor files
+*.swp
+*.swo
+.DS_Store
+.vscode/
+.idea/
+
+# Logs
+*.log
