@@ -9,9 +9,11 @@ if(NOT OpenCV_FOUND)
     message(FATAL_ERROR "OpenCV not found!")
 endif()
 
+include_directories(./mylibs/RectSelector/include)
+
 add_executable(rect_selector 
     main.cpp 
-    rect_selector.cpp
+    ./mylibs/RectSelector/src/rect_selector.cpp
 )
 
 target_link_libraries(rect_selector ${OpenCV_LIBS})
