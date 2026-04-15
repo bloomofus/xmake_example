@@ -1,6 +1,6 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
-#include "rect_selector.h"
+#include "RectSelector/rect_selector.h"
 
 using namespace std;
 

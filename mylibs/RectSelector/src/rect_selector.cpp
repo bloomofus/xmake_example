@@ -1,4 +1,4 @@
-#include "rect_selector.h"
+#include "RectSelector/rect_selector.h"
 #include <iostream>
 
 using namespace cv;
