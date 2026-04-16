@@ -3,13 +3,13 @@
 add_rules("mode.debug", "mode.release")
 set_languages("cxx11")
 
--- 方法 1: 直接添加本地子项目作为依赖
--- add_requires("RectSelector", {rootdir = "libs/RectSelector"}) 
--- 注意：xmake 的 add_requires 通常用于远程包。对于本地库，更推荐下面这种方法：
-
--- 方法 2 (推荐): 使用 add_subdirs 或直接定义依赖
--- 在主 xmake.lua 中引入子目录
+-- 添加子xmake依赖
 includes("libs/RectSelector/xmake.lua")
+-- 添加三方库依赖
+add_requires("opencv", {system = true})
+
+-- 一些路径环境变量
+local libPath_myMath="./libs/myMath"
 
 target("main")
     -- 基础属性设置
@@ -23,5 +23,11 @@ target("main")
     -- 添加头文件
     add_includedirs("./include")
     
-    -- 添加子依赖
+    -- 链接子xmake依赖
     add_deps("RectSelector")
+    -- 链接三方库依赖
+    add_packages("opencv", {public = true})
+    -- 添加运行库依赖
+    add_includedirs(path.join(libPath_myMath,"include"))
+    add_linkdirs(path.join(libPath_myMath,"lib"))
+    add_links("myMath")

@@ -1,8 +1,10 @@
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include "RectSelector/rect_selector.h"
+#include "myMath/baseFunc.h"
 
 using namespace std;
+using namespace RectSelectorSpace;
 
 const string IMAGE_PATH = "./pics/test.jpg";
 
@@ -37,7 +39,7 @@ int main()
         }
         else if (option == '1' || option == 'l' || option == 'L')
         {
-            RectSelector selector(IMAGE_PATH);
+            RectSelectorSpace::RectSelector selector(IMAGE_PATH);
 
             if (selector.loadImage())
             {
@@ -63,6 +65,11 @@ int main()
             cout << "✗ 无效选项，请重新输入。" << endl;
         }
     }
+
+    std::cout << "\n***************************************" <<std::endl;
+    std::cout << "测试运行库依赖： 2+3=" << mylib_add(2, 3) << std::endl;
+    std::cout << "当前运行库版本是：" << mylib_version() << std::endl;
+    std::cout << "\n***************************************" << std::endl;
 
     return 0;
 }
