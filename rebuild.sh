@@ -3,12 +3,9 @@
 
 echo "=== Rebuilding RectSelector Project ==="
 
-if [ -d "build" ]; then
-    echo "[INFO] Cleaning previous build directory..."
-    rm -rf build
-fi
-
+rm -rf build
 mkdir -p build
+
 cd build
 
 echo "[INFO] Running cmake..."
@@ -19,4 +16,4 @@ make
 
 echo "[SUCCESS] Build completed!"
 echo ""
-echo "To run: ./build/rect_selector"
+echo "To run: ./build/main"

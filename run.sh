@@ -2,7 +2,7 @@
 # 启动程序脚本
 
 PROJECT_ROOT="$(dirname "$0")"
-BINARY="$PROJECT_ROOT/build/rect_selector"
+BINARY="$PROJECT_ROOT/build/main"
 
 if [ ! -f "$BINARY" ]; then
     echo "[ERROR] Binary not found. Please run 'rebuild.sh' first."

@@ -4,7 +4,7 @@
 
 using namespace std;
 
-const string IMAGE_PATH = "./test.jpg";
+const string IMAGE_PATH = "./pics/test.jpg";
 
 void printMenu()
 {
