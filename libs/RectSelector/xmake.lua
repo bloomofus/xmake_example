@@ -1,15 +1,10 @@
 -- ==========================================
 -- File: mylibs/RectSelector/xmake.lua
 -- ==========================================
-
--- 添加构建模式规则（调试/发布）
 add_rules("mode.debug", "mode.release")
-
--- 设置 C++ 标准为 C++11 (对应原 CMake: set(CMAKE_CXX_STANDARD 11))
 set_languages("cxx11")
 
 -- 添加 OpenCV 依赖
--- {system = true} 表示优先使用系统安装的 OpenCV，避免重复编译
 add_requires("opencv", {system = true})
 
 -- 定义目标：RectSelector 库

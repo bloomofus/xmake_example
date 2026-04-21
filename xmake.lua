@@ -4,7 +4,7 @@ add_rules("mode.debug", "mode.release")
 set_languages("cxx11")
 
 -- 添加子xmake依赖
-includes("libs/RectSelector/xmake.lua")
+includes("libs/RectSelector")
 -- 添加三方库依赖
 add_requires("opencv", {system = true})
 
@@ -28,6 +28,7 @@ target("main")
     -- 链接三方库依赖
     add_packages("opencv", {public = true})
     -- 添加运行库依赖
-    add_includedirs(path.join(libPath_myMath,"include"))
+    -- 如果别的项目依赖这个的话可以加上{public=true}
+    add_includedirs(path.join(libPath_myMath,"include"),{public=true}) 
     add_linkdirs(path.join(libPath_myMath,"lib"))
     add_links("myMath")
