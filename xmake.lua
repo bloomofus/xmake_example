@@ -14,7 +14,7 @@ local libPath_myMath="./libs/myMath"
 target("main")
     -- 基础属性设置
     set_kind("binary")
-    set_targetdir("./build/")
+    set_targetdir("./bin/")
     set_rundir("$(projectdir)")
 
     -- 添加源文件

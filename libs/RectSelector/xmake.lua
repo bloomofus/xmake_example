@@ -12,6 +12,7 @@ target("RectSelector")
     -- 设置目标类型为静态库 (static library)
     -- 如果希望生成动态库 (.so)，请改为 set_kind("shared")
     set_kind("static")
+    set_targetdir("$(projectdir)/bin") -- 让所有库都生成到主项目的 bin 目录
     
     -- 添加源文件
     add_files("src/rect_selector.cpp")
