@@ -9,10 +9,10 @@ add_requires("opencv", {system = true})
 
 -- 定义目标：RectSelector 库
 target("RectSelector")
-    -- 设置目标类型为静态库 (static library)
-    -- 如果希望生成动态库 (.so)，请改为 set_kind("shared")
-    set_kind("static")
+    -- 基础属性设置
+    set_kind("static") -- 设置目标类型为静态库，如果希望生成动态库 (.so)，请改为 set_kind("shared")
     set_targetdir("$(projectdir)/bin") -- 让所有库都生成到主项目的 bin 目录
+    add_rpathdirs("$ORIGIN") -- $ORIGIN 代表动态库文件自身所在的目录，传递给引用该库的库
     
     -- 添加源文件
     add_files("src/rect_selector.cpp")
